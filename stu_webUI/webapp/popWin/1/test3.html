@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<script type="text/javascript" src="weebox/jquery.js"></script>
+        <script type="text/javascript" src="weebox/bgiframe.js"></script>
+		<script type="text/javascript" src="weebox/weebox.js"></script>
+		<link type="text/css" rel="stylesheet" href="weebox/weebox.css" />
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="openFileManager();">弹出框</button>
+</body>
+</html>
+<script>
+var boxT;
+function openFileManager() {
+	boxT = $.weeboxs.open(
+			"http://www.qq.com", {
+				title : '弹出页面',
+				draggable : true,
+				modal: true,
+				contentType : 'ajax',
+				width : 800,
+				height : 500,
+				onok : function(box) {
+
+					boxT.close();// 增加事件方法后需手动关闭弹窗
+				},
+				oncancel : function(box1) {
+					boxT.close();// 增加事件方法后需手动关闭弹窗
+				},
+				onclose : function() {
+					//uploadFileOver();
+				}
+			});
+}
+  
+</script>
