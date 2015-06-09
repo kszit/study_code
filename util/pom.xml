@@ -13,7 +13,22 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<!-- 设定仓库 -->
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<!-- <url>http://192.168.192.201:8081/nexus/content/groups/public/</url> -->
+			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>clojars.org</id>
+			<name>clojars</name>
+			<!-- <url>http://192.168.192.201:8081/nexus/content/groups/public/</url> -->
+			<url>http://clojars.org/repo</url>
+		</repository>
+	</repositories>
+	
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -28,5 +43,28 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
+<!-- 
+	<dependency>
+	<groupId>org.jvnet.hudson</groupId>
+	<artifactId>trilead-ssh2</artifactId>
+	<version>build212-hudson-6</version>
+</dependency>
+	 -->
+
+
+    <dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>1.0</version>
+		</dependency>
+	
+
+	<dependency>
+		<groupId>ch.ethz.ganymed</groupId>
+		<artifactId>ganymed-ssh2</artifactId>
+		<version>build210</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
   </dependencies>
 </project>

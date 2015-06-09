@@ -23,80 +23,80 @@ public class SSH2UploadFileUtil {
 		this.password = apwd;
 	}
 	
-	// scpÎÄ¼şÄ¿Â¼
+	// scpæ–‡ä»¶ç›®å½•
 				String scpPath = "/usr/local/tomcat/webapps/datserver/upgradePackage/001";// "/data01/javadev/";//
-				// scp ipµØÖ·
+				// scp ipåœ°å€
 				String scpAddress = "172.31.201.169";// "192.168.100.220"; //
-				// scp ¶Ë¿ÚºÅ
+				// scp ç«¯å£å·
 				String scpPort = "22";// "222";//WebSrvUtil.srv("scpPort").trim();
-				// scp ÓÃ»§Ãû
+				// scp ç”¨æˆ·å
 				String username = "root";// "javadev";
-				// scp ÃÜÂë
+				// scp å¯†ç 
 				String password = "genertech";// "javadev123!@#";//WebSrvUtil.srv("password").trim();
 	
 	
 	/**
-	 * ·½·¨¹¦ÄÜËµÃ÷£ºÍ¨¹ıscpÉÏ´«ÈÎºÎÎÄ¼ş
+	 * æ–¹æ³•åŠŸèƒ½è¯´æ˜ï¼šé€šè¿‡scpä¸Šä¼ ä»»ä½•æ–‡ä»¶
 	 * 
 	 * @param fileName
 	 * @throws Exception
-	 * @return ·µ»Ø"200"ÔòÉÏ´«³É¹¦£¬"500" ÔòÉÏ´«Ê§°Ü³öÏÖÒì³£ £¬"506"ÔòµÇÂ½Ô¶³Ì·şÎñÆ÷Ê§°Ü
+	 * @return è¿”å›"200"åˆ™ä¸Šä¼ æˆåŠŸï¼Œ"500" åˆ™ä¸Šä¼ å¤±è´¥å‡ºç°å¼‚å¸¸ ï¼Œ"506"åˆ™ç™»é™†è¿œç¨‹æœåŠ¡å™¨å¤±è´¥
 	 */
 	public String upLoadFile(byte[] filedata,String fileName) throws Exception {
 		if (logger.isDebugEnabled()) {
-			logger.debug("==============¿ªÊ¼ÉÏ´«====" + fileName + "==============");
+			logger.debug("==============å¼€å§‹ä¸Šä¼ ====" + fileName + "==============");
 		}
 		try {
 			
 
 			if (logger.isDebugEnabled()) {
-				logger.debug("¼ÓÈëSCPÊµÏÖÔ¶³Ì´«ÊäÎÄ¼ş");
+				logger.debug("åŠ å…¥SCPå®ç°è¿œç¨‹ä¼ è¾“æ–‡ä»¶");
 			}
-			// ¼ÓÈëSCPÊµÏÖÔ¶³Ì´«ÊäÎÄ¼ş
+			// åŠ å…¥SCPå®ç°è¿œç¨‹ä¼ è¾“æ–‡ä»¶
 			Connection con = new Connection(scpAddress,
 					Integer.parseInt(scpPort));
 			if (logger.isDebugEnabled()) {
-				logger.debug("¿ªÊ¼Á¬½Ó");
+				logger.debug("å¼€å§‹è¿æ¥");
 			}
-			// Á¬½Ó
+			// è¿æ¥
 			con.connect();
 			if (logger.isDebugEnabled()) {
-				logger.debug("µÇÂ½Ô¶³Ì·şÎñÆ÷" + username + "," + password);
+				logger.debug("ç™»é™†è¿œç¨‹æœåŠ¡å™¨" + username + "," + password);
 			}
-			// µÇÂ½Ô¶³Ì·şÎñÆ÷µÄÓÃ»§ÃûÃÜÂë
+			// ç™»é™†è¿œç¨‹æœåŠ¡å™¨çš„ç”¨æˆ·åå¯†ç 
 			boolean isAuthed = con.authenticateWithPassword(username, password);
-			// µÇÂ½Ê§°Ü
+			// ç™»é™†å¤±è´¥
 			if (!isAuthed) {
 				if (logger.isDebugEnabled()) {
-					logger.debug("µÇÂ½Ô¶³Ì·şÎñÆ÷Ê§°Ü");
+					logger.debug("ç™»é™†è¿œç¨‹æœåŠ¡å™¨å¤±è´¥");
 				}
 				return "506";
 			}
 			if (logger.isDebugEnabled()) {
-				logger.debug("½¨Á¢scp¿Í»§¶Ë");
+				logger.debug("å»ºç«‹scpå®¢æˆ·ç«¯");
 			}
 
-			// ½¨Á¢SCP¿Í»§¶Ë
+			// å»ºç«‹SCPå®¢æˆ·ç«¯
 			SCPClient scpClient = con.createSCPClient();
 			if (logger.isDebugEnabled()) {
-				logger.debug("¿ªÊ¼ÉÏ´«ÎÄ¼şµ½·şÎñÆ÷");
+				logger.debug("å¼€å§‹ä¸Šä¼ æ–‡ä»¶åˆ°æœåŠ¡å™¨");
 			}
 
-			// 0755ÊÇÖ¸È¨ÏŞ±àºÅ
+			// 0755æ˜¯æŒ‡æƒé™ç¼–å·
 			scpClient.put(filedata,fileName, scpPath, "0755");
 			if (logger.isDebugEnabled()) {
-				logger.debug("¹Ø±ÕÁ¬½Ó");
+				logger.debug("å…³é—­è¿æ¥");
 			}
 			
 			
 			
 			con.close();
 			if (logger.isDebugEnabled()) {
-				logger.debug("ÉÏ´«Íê³É");
+				logger.debug("ä¸Šä¼ å®Œæˆ");
 			}
 			return "200";
 		} catch (Exception e) {
-			logger.error("ÉÏ´«Ê§°Ü", e.getMessage(), e);
+			logger.error("ä¸Šä¼ å¤±è´¥", e.getMessage(), e);
 			return "500";
 		}
 	}
