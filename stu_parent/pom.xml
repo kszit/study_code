@@ -15,6 +15,10 @@
 		<module>../stu_util</module>
 		<module>../stu_algorithm</module>
 		<module>../stu_mavnePlugin</module>
+		<module>../stu_util</module>
+		<module>../stu_mybatis</module>
+		<module>../stu_log</module>
+		
 	</modules>
 
 	<properties>

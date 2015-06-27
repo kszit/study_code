@@ -97,8 +97,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.kszit</groupId>
-			<artifactId>util</artifactId>
+			<groupId>com.kszit.study</groupId>
+			<artifactId>stu_util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>jar</type>
 			<scope>compile</scope>
