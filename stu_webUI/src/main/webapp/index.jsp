@@ -24,6 +24,6 @@ li{
 	<li><a href="popWin/2/index.html" target="_blank">弹出框(跨域)</a></li>
 	
 	<li><a href="frame/ace/index.html" target="_blank">页面框架(ace)</a></li>
-	
+	<li><a href="js/pinyin/index.html" target="_blank">中文转换为拼音</a></li>
 </body>
 </html>
