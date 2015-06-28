@@ -1,0 +1,5 @@
+web调用封装：
+
+测试：http://localhost:8983/datclient/dis.do?a=TestControle&m=doInitSys
+
+类 TestControle 在测试包中：com.bdcor.pip.client.web.controle.TestControle
