@@ -38,12 +38,12 @@ public class Container {
 	
 	private void init(){
 		
-		FindClassExtendsSubClass<Controle> controleClassesHandler = new FindClassExtendsSubClass<Controle>("com.bdcor.pip.client.domain",Controle.class,new String[]{"dat"});
+		FindClassExtendsSubClass<Controle> controleClassesHandler = new FindClassExtendsSubClass<Controle>("com.kszit.dareport",Controle.class);
 		List<Class<Controle>> controleClasses = controleClassesHandler.getClassSubCalss(true);
 		
 		Class<Controle> webContail = null;
 		try {
-			webContail = (Class<Controle>) Class.forName("com.bdcor.pip.client.core.dataTransfer.web.TransferDataWebCall");
+			webContail = (Class<Controle>) Class.forName("com.kszit.dareport.web.controle.test.JsonDataTest");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

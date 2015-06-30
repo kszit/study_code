@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 查找子类。
  * <ol>
@@ -17,15 +20,14 @@ import java.util.jar.JarInputStream;
  *
  */
 public class FindClassExtendsSubClass<T> {
+	private Logger log = LoggerFactory.getLogger(getClass());
+	
 	//跳过的类
-	private String[] skipScanClassName = new String[]{"SynIDCardAPI","IDCordRead2"};
 	private String pkgName = null;
 	private Class<T> goalClass = null;
-	private String[] jarNames = null;
-	public FindClassExtendsSubClass(String apackageName,Class<T> agoalClass,String[] ajarNames){
+	public FindClassExtendsSubClass(String apackageName,Class<T> agoalClass){
 		this.pkgName = apackageName.replace('.', '/') + "/";
 		this.goalClass = agoalClass;
-		this.jarNames = ajarNames;
 		findClassAndJarPath();
 	}
 	
@@ -37,7 +39,7 @@ public class FindClassExtendsSubClass<T> {
 	}
 	
 	 private void getClassInPackage(String rPath,boolean isContainSubPackage) {  
-	        
+		 log.debug("找到路径："+rPath);
         try {  
             for (File classPath : classPathArray) {  
                 if (!classPath.exists())  
@@ -46,17 +48,18 @@ public class FindClassExtendsSubClass<T> {
                     File dir = new File(classPath, rPath);  
                     if (!dir.exists())  
                         continue;  
+                    
+            
                     for (File file : dir.listFiles()) {  
-                        if (file.isFile()) {  
-                            String clsName = file.getName();  
+                        
+                    	if (file.isFile()) {  
+
+                            log.debug("找到类："+file.getPath());
+                            
+                    		String clsName = file.getName();  
                             if(clsName.endsWith(".class")){
                             	clsName = (rPath.replace("/", ".") + clsName).replace(".class",""); 
-                                if(isSkip(clsName)){
-                                	continue;
-                                }
-                                if(clsName.startsWith("com.bdcor.pip.client.util.idcord")){
-                                	continue;
-                                }
+                                
                                 Class<T> c = (Class<T>) Class.forName(clsName);
                                 if(isSubClass(c)){
                                 	findClasses.add(c);
@@ -70,9 +73,7 @@ public class FindClassExtendsSubClass<T> {
                     }  
                 } else {
                 	
-                	if(!isIncludeJar(classPath.getName())){
-                		continue;
-                	}
+                	
 //                	DatLogger.logSysStartDown(getClass(), "查找jar包："+classPath.getPath());
                     FileInputStream fis = new FileInputStream(classPath);  
                     JarInputStream jis = new JarInputStream(fis, false);  
@@ -139,24 +140,8 @@ public class FindClassExtendsSubClass<T> {
 	    }  
 	}
 	
-	private boolean isSkip(String className){
-		for(String name:skipScanClassName){
-			if(className.contains(name)){
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private boolean isIncludeJar(String jarName){
-		for(String jar:jarNames){
-//			DatLogger.logSysStartDown(getClass(), "找到jar包："+jarName+"。对别目标jar："+jar);
-			if(jarName.startsWith(jar)){
-				return true;
-			}
-		}
-		return false;
-	}
+
+
 	
 	public static void main(String[] a) throws Exception{
 		String rPath = "com.bdcor.pip.client".replace('.', '/') + "/";
