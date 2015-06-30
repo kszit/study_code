@@ -3,6 +3,14 @@ package com.kszit.stu.webInvoke.web.out;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.exception.MethodInvocationException;
+import org.apache.velocity.exception.ParseErrorException;
+import org.apache.velocity.exception.ResourceNotFoundException;
+
 import com.kszit.stu.webInvoke.web.context.ContextManager;
 import com.kszit.stu.webInvoke.web.controle.Page;
 
@@ -40,10 +48,6 @@ public class PageOut implements IOut{
 		
 	}
 
-	public static void main(String[] a) throws ClassNotFoundException{
-		String s = "com.bdcor.pip.client.core.web.out.PageOut";
-		Class c = Class.forName(s);
-	}
 }
 
 
@@ -73,7 +77,6 @@ class VelocityOut{
 		try {
 			ve.init(p);
 		} catch (Exception e) {
-			DatLogger.loggError(e);
 			e.printStackTrace();
 		}
 	}

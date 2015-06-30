@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kszit.stu.webInvoke.utils.StringUtils;
 import com.kszit.stu.webInvoke.web.UrlParam;
-
+/**
+ * 请求和响应的上下文
+ * @author Administrator
+ *
+ */
 public class Context {
 	
 	private HttpServletRequest request;
@@ -103,6 +107,9 @@ public class Context {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 	
 	public void out(InputStream inputStream){
 		PrintWriter writer = null;

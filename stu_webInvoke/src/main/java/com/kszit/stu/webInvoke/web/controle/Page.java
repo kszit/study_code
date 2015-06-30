@@ -6,14 +6,14 @@ import java.util.Map;
 public class Page extends ParentPage{
 
 	/**
-	 * 妯℃澘鍚嶇О
+	 * 模板名称
 	 */
 	private String vmName;
 	
 	private Map<String,Object> map = new HashMap<String,Object>();
 	
 	/**
-	 * 璇锋眰鐨勮繑鍥瀓son淇℃伅
+	 * 请求的返回json信息
 	 */
 	private String jsonContent;
 	

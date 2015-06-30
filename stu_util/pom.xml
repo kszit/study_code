@@ -6,6 +6,7 @@
     <artifactId>stu_parent</artifactId>
     <groupId>com.kszit.study</groupId>
     <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../stu_parent/pom.xml</relativePath>
   </parent>
   <artifactId>stu_util</artifactId>
   <name>stu_util</name>

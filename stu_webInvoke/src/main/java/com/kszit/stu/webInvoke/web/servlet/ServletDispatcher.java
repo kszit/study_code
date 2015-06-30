@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.kszit.stu.webInvoke.web.context.Context;
 import com.kszit.stu.webInvoke.web.context.ContextManager;
 import com.kszit.stu.webInvoke.web.controle.Controle;
-import com.kszit.stu.webInvoke.web.controle.Engine;
+import com.kszit.stu.webInvoke.web.controle.engine.Engine;
 /**
  * 访问入口
  * @author Administrator

@@ -6,13 +6,13 @@ public abstract class ParentPage {
 	
 	
 	/**
-	 * 澶勭悊缁撴灉淇℃伅銆倀rue锛氭甯稿鐞嗙殑杩斿洖锛屽惁鍒欎负閿欒淇℃伅
+	 * 处理结果信息。true：正常处理的返回，否则为错误信息
 	 */
 	private String msg = "";
 	/**
-	 * 澶勭悊鐘舵�锛�
-	 * 1锛氭纭�
-	 * 2锛氶敊璇�
+	 * 处理状态，
+	 * 1：正确
+	 * 2：错误
 	 */
 	private int state;
 	
