@@ -4,9 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * 1、数据库 配置信息，
@@ -40,7 +37,6 @@ public class DbHandler{
 	
 	
 	public boolean update(String sql) {
-		
 		Statement st = null;
 		try { 
 			Connection c = con; 
@@ -60,28 +56,28 @@ public class DbHandler{
 		return true;
 	}
 
-	/*
-
-	
-	@Override
-	public Object getOne(String sql,DbOperate.dbOperatorCallBack callB) {
-		Object o = null;
-		try { 
-			Connection c = getCon(); 
-			Statement st = c.createStatement(); 
-			ResultSet rs = st.executeQuery(sql);
-			if(rs.next()){
-				o = callB.toObj(rs);
+	public int getCount(String sql) throws Exception {
+		Object count =  this.getOne(sql, new DbOperatorCallBack(){
+			public Object toObj(ResultSet rs) throws SQLException {
+					return rs.getInt(1);
 			}
-			st.close(); 
-		}catch (SQLException e) { 
-			DbErrorHandler handler = new DbErrorHandler(e);
-        	throw handler.handlerSqlError();
-		}  
-		DbManagerFactory.instance().queryLog(sql);
-		return o;
+		});
+		return Integer.parseInt(count.toString());
 	}
 
+	
+	public Object getOne(String sql,DbOperatorCallBack callB) throws Exception {
+		Object o = null;
+		Connection c = con; 
+		Statement st = c.createStatement(); 
+		ResultSet rs = st.executeQuery(sql);
+		if(rs.next()){
+			o = callB.toObj(rs);
+		}
+		st.close(); 
+		return o;
+	}
+	/*
 	@Override
 	public List<Object> getList(String sql,DbOperate.dbOperatorCallBack callB) {
 		if(MultipleDbManage.instance().isMysql()){
@@ -158,21 +154,7 @@ public class DbHandler{
 		return reList;
 	}
 	
-	public int getCount(String sql) {
-		
-		Object count =  this.getOne(sql, new dbOperatorCallBack(){
-			@Override
-			public Object toObj(ResultSet rs) {
-				try {
-					return rs.getInt(1);
-				} catch (SQLException e) {
-					DbErrorHandler handler = new DbErrorHandler(e);
-		        	throw handler.handlerSqlError();
-				}
-			}
-		});
-		return Integer.parseInt(count.toString());
-	}
+	
 	
 	@Override
 	protected void finalize() throws Throwable {
