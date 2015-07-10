@@ -83,6 +83,47 @@ public class PoiTest {
 	    
 	}
 	
-
+	/**
+	 * 隐藏单元格
+	 * @param a
+	 * @throws IOException
+	 */
+	public static void main(String[] a) throws IOException{
+		//创建Excel工作簿对象
+		HSSFWorkbook wb = new HSSFWorkbook();
+		//创建Excel工作表对象
+		HSSFSheet sheet = wb.createSheet("new sheet-加密");  
+		//创建单元格样式
+		HSSFCellStyle hiddenStyle = wb.createCellStyle();
+		hiddenStyle.setHidden(true);
+		
+		HSSFRow row = sheet.createRow((short)0); 
+		HSSFCell cell= row.createCell(1);
+		cell.setCellValue("1233");
+		cell.setCellStyle(hiddenStyle);
+		row.setRowStyle(hiddenStyle);
+		
+		
+		//设置工作表保护密码
+		sheet.protectSheet("加密");
+		//创建Excel工作表的行
+		
+		//创建单元格样式
+		HSSFCellStyle cellStyle = wb.createCellStyle();
+		//设置单元为可编辑
+		cellStyle.setLocked(false); 
+		
+		
+//		cell.setCellStyle(cellStyle);
+		
+		
+		
+		File f = Resources.getResourceAsFile("workbook11.xls");
+		FileOutputStream fileOut = new FileOutputStream(f);
+	    wb.write(fileOut);
+	    fileOut.close();
+	    
+	    
+	}
 	
 }

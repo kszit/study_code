@@ -48,5 +48,39 @@
             <artifactId>poi-scratchpad</artifactId>
             <version>3.9</version>
         </dependency>
+        <dependency>
+        <groupId>net.sf.jxls</groupId>
+        <artifactId>jxls-core</artifactId>
+        <version>1.0.3</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>poi-ooxml</artifactId>
+            <groupId>org.apache.poi</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>commons-digester</artifactId>
+            <groupId>commons-digester</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.jxls</groupId>
+        <artifactId>jxls-reader</artifactId>
+        <version>1.0.3</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>commons-logging</artifactId>
+            <groupId>commons-logging</groupId>
+          </exclusion>
+          <exclusion>
+            <artifactId>poi-ooxml</artifactId>
+            <groupId>org.apache.poi</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
 	</dependencies>
 </project>
