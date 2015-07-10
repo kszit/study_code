@@ -36,15 +36,13 @@ public class DbHandler{
 	
 	
 	
-	public boolean update(String sql) {
+	public boolean update(String sql) throws SQLException {
 		Statement st = null;
-		try { 
+		
 			Connection c = con; 
 			st = c.createStatement(); 
 			st.executeUpdate(sql);
-		}catch (SQLException e) { 
-			
-		}finally{
+		
 			if(st!=null){
 				try {
 					st.close();
@@ -52,7 +50,7 @@ public class DbHandler{
 					e.printStackTrace();
 				} 
 			}
-		}
+		
 		return true;
 	}
 

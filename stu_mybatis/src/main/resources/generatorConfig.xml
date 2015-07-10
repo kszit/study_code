@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+"dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 
+			说明：运行命令     mybatis-generator:generate 
+		 -->
+		<!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/lineage2" 
+			userId="root" password="dota8888" /> -->
+		<!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@10.8.8.45:1521:bdcor" 
+			userId="bdcor" password="develop" /> -->
+		
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/lineage2" 
+			userId="root" password="dota8888" /> 
+		
+
+		<javaModelGenerator targetPackage="com.bdcor.pip.web.data.domain"
+			targetProject="src/main/java" />
+		<sqlMapGenerator targetPackage="com.bdcor.pip.web.data.domain"
+			targetProject="src/main/java" />
+		<javaClientGenerator targetPackage="com.bdcor.pip.web.data.domain"
+			targetProject="src/main/java" type="XMLMAPPER" />
+		<table tableName="PIP_COMM_PATIENT_HISTORY" domainObjectName="VqisDateclc">
+		</table>
+	</context>
+</generatorConfiguration>
