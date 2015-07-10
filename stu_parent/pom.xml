@@ -21,6 +21,8 @@
 		<module>../stu_db1h2</module>
 		<module>../stu_webInvoke</module>
 		<module>../stu_excel</module>
+		<module>../stu_dataConvert</module>
+		
 	</modules>
 
 	<properties>
