@@ -23,6 +23,7 @@
 		<module>../stu_excel</module>
 		<module>../stu_dataConvert</module>
 		
+		<module>../stu_dataTransfer</module>
 	</modules>
 
 	<properties>
