@@ -41,15 +41,15 @@ public class Container {
 		FindClassExtendsSubClass<Controle> controleClassesHandler = new FindClassExtendsSubClass<Controle>("com.kszit.dareport",Controle.class);
 		List<Class<Controle>> controleClasses = controleClassesHandler.getClassSubCalss(true);
 		
-		Class<Controle> webContail = null;
-		try {
-			webContail = (Class<Controle>) Class.forName("com.kszit.dareport.web.controle.test.JsonDataTest");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-		if(webContail!=null){
-			controleClasses.add(webContail);
-		}
+//		Class<Controle> webContail = null;
+//		try {
+//			webContail = (Class<Controle>) Class.forName("com.kszit.dareport.web.controle.test.JsonDataTest");
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//		if(webContail!=null){
+//			controleClasses.add(webContail);
+//		}
 		
 		
 		for(Class<Controle> c:controleClasses){
@@ -67,8 +67,9 @@ public class Container {
 	 * 注册控制类
 	 * @param c
 	 */
-	private void addControler(Class c){
+	public void addControler(Class c){
 //		DatLogger.logSysStartDown(getClass(), "添加控制类："+"==>"+c.getName());
+		log.debug("添加控制器类："+c.getName());
 		String classNameWithPage = c.getName();
 		Pattern pattern = Pattern.compile("[.]+");
 		String[] nameAndPages = pattern.split(classNameWithPage);

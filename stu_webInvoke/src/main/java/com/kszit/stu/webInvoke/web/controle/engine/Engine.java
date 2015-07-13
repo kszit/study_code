@@ -17,12 +17,17 @@ public class Engine {
 	
 	private Engine(){
 		Container.getInstance();
+		//自动查找类
 		init();
 	}
 
 	
 	private void init(){
 		
+	}
+	
+	public void registerControle(Class c){
+		 Container.getInstance().addControler(c);
 	}
 	
 	/**
