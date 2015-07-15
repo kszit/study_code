@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<workbook>
+    <worksheet name="Sheet1">
+		
+		<section startRow="0" endRow="0">
+			<mapping cell="F1">area.provinceId</mapping> 
+			<mapping cell="G1">area.provinceName</mapping> 
+			<mapping cell="H1">area.cityId</mapping> 
+			<mapping cell="I1">area.cityName</mapping> 
+			<mapping cell="J1">area.districtId</mapping> 
+			<mapping cell="K1">area.districtName</mapping> 
+			<mapping cell="L1">area.townId</mapping> 
+			<mapping cell="M1">area.townName</mapping> 
+			<mapping cell="N1">area.villageId</mapping> 
+			<mapping cell="O1">area.villageName</mapping> 
+		</section>
+		<section startRow="1" endRow="1">
+    	</section>
+        <loop startRow="2" endRow="2" items="pats" var="pat" varType="com.bdcor.pip.web.pro.promgt.service.patientExcelResolving.obj.ExcelPatientOfIdCordObj">
+        
+            <section startRow="2" endRow="2">
+                <mapping cell="A3">pat.lccCode</mapping>
+                <mapping cell="B3">pat.patientName</mapping>
+                <mapping cell="C3">pat.idNumber</mapping>
+                <mapping cell="D3">pat.phone</mapping>
+                <mapping cell="E3">pat.mobile</mapping>
+             </section> 
+            
+            <loopbreakcondition>
+                <rowcheck offset="0">
+                    <cellcheck offset="0"/>
+                </rowcheck>
+            </loopbreakcondition>
+        </loop>
+    </worksheet>
+</workbook>
