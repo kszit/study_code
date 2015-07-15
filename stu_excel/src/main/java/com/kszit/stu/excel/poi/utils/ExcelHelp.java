@@ -306,8 +306,15 @@ public class ExcelHelp {
 	 */
 	public void addSelect(List<String> selectContent,int firstRow,int lastRow,int firstCol,int lastCol){
 		String[] selectCStr = (String[])selectContent.toArray();
-		addSelect(selectCStr,firstRow,lastRow,firstCol,lastCol);
+		
+		//生成下拉列表  
+	       CellRangeAddressList regions = new CellRangeAddressList(firstRow,lastRow,firstCol,lastCol);//CellRangeAddressList(int firstRow,int lastRow,int firstCol,int lastCol);  
+	       //生成下拉框内容  
+	       DVConstraint constraint = DVConstraint.createExplicitListConstraint(selectContent);  
+	       //添加下拉菜单到sheet  
+	       HSSFDataValidation data_validation = new HSSFDataValidation(regions,constraint);  
+	       sheet.addValidationData(data_validation);  
+	   	
 	}
 	
-
 }
