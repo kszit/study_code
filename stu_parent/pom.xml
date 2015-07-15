@@ -24,6 +24,7 @@
 		<module>../stu_dataConvert</module>
 		
 		<module>../stu_dataTransfer</module>
+		<module>../stu_javaBase</module>
 	</modules>
 
 	<properties>
