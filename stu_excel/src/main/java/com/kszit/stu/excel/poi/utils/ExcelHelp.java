@@ -304,8 +304,8 @@ public class ExcelHelp {
 	 * @param firstCol        开始列
 	 * @param lastCol         结束列
 	 */
-	public void addSelect(List<String> selectContent,int firstRow,int lastRow,int firstCol,int lastCol){
-		String[] selectCStr = (String[])selectContent.toArray();
+	public void addSelect(String[] selectContent,int firstRow,int lastRow,int firstCol,int lastCol){
+//		String[] selectCStr = (String[])selectContent.toArray();
 		
 		//生成下拉列表  
 	       CellRangeAddressList regions = new CellRangeAddressList(firstRow,lastRow,firstCol,lastCol);//CellRangeAddressList(int firstRow,int lastRow,int firstCol,int lastCol);  
@@ -316,5 +316,7 @@ public class ExcelHelp {
 	       sheet.addValidationData(data_validation);  
 	   	
 	}
+	
+	
 	
 }
