@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.tools.ant.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
@@ -19,11 +19,11 @@ import com.kszit.stu.excel.poi.patientExcelResolving.obj.ExcelDataObj;
 import com.kszit.stu.excel.poi.patientExcelResolving.obj.ExcelPatientObj;
 import com.kszit.stu.excel.poi.patientExcelResolving.obj.ExcelPatientOfIdCordObj;
 import com.kszit.stu.excel.poi.patientExcelResolving.obj.ExcelPatientOfOtherObj;
-import com.kszit.stu.excel.poi.patientExcelTemplate.ExcelHelper2;
 import com.kszit.stu.excel.poi.patientExcelTemplate.GenerateExcelTemplate;
 import com.kszit.stu.excel.poi.patientExcelTemplate.GenerateExcelTemplateOfIdCord;
 import com.kszit.stu.excel.poi.patientExcelTemplate.GenerateExcelTemplateOfOther;
 import com.kszit.stu.excel.poi.patientExcelTemplate.obj.AreaObj;
+import com.kszit.stu.excel.poi.utils.ExcelHelp;
 /**
  * excel数据装换为对象
  * @author Administrator
@@ -48,7 +48,7 @@ public class ExcelDataTransToObjWithPOI {
 	Workbook book = null;
 	Sheet sheet = null;
 	
-	ExcelHelper2 excelHelper = null;
+	ExcelHelp excelHelper = null;
 	
 	public ExcelDataTransToObjWithPOI(File excelDataFile) throws IOException, SAXException, InvalidFormatException, ExcelDataException{
 		
@@ -109,7 +109,7 @@ public class ExcelDataTransToObjWithPOI {
 		
 	
 		
-		this.excelHelper = new ExcelHelper2(this.sheet,this.book);
+		this.excelHelper = new ExcelHelp(this.sheet,this.book);
 	}
 	
 	/**
@@ -117,7 +117,7 @@ public class ExcelDataTransToObjWithPOI {
 	 * @return
 	 */
 	private String templeteType(Sheet sh){
-		ExcelHelper2 eHelper = new ExcelHelper2(sh, null);
+		ExcelHelp eHelper = new ExcelHelp(sh, null);
 		
 		
 		int row = 1;

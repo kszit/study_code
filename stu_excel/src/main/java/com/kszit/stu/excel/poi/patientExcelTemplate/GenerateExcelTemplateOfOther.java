@@ -3,6 +3,7 @@ package com.kszit.stu.excel.poi.patientExcelTemplate;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Collections;
 
 import com.kszit.stu.excel.poi.patientExcelResolving.obj.ExcelPatientOfOtherObj;
 import com.kszit.stu.excel.poi.patientExcelTemplate.obj.AreaObj;
@@ -43,6 +44,8 @@ public class GenerateExcelTemplateOfOther extends GenerateExcelTemplate{
 				ExcelPatientOfOtherObj.COL_NUM_SEX, 
 				ExcelPatientOfOtherObj.COL_NUM_SEX);
 
+		
+		
 		excelhelp.addSelect(certTypes, 
 				super.editRowBegin, 
 				super.editRowCount, 

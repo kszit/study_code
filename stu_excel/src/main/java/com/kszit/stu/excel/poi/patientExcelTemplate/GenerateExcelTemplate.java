@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Row;
 
 import com.kszit.stu.excel.poi.patientExcelTemplate.obj.AreaObj;
+import com.kszit.stu.excel.poi.utils.ExcelHelp;
 
 /**
  * 生成excel 模板
@@ -60,7 +61,7 @@ public abstract class GenerateExcelTemplate {
 	
 	
 	
-	ExcelHelper2 excelhelp = null;
+	ExcelHelp excelhelp = null;
 	
 	
 	
@@ -77,7 +78,7 @@ public abstract class GenerateExcelTemplate {
 //		sheetStyle.setFillBackgroundColor(new HSSFColor.BLUE().getIndex());
 //		sheet.setDefaultColumnStyle(10, (CellStyle)sheetStyle);
 
-		this.excelhelp = new ExcelHelper2(this.sheet,this.book);
+		this.excelhelp = new ExcelHelp(this.sheet,this.book);
 	}
 	
 	
