@@ -1,0 +1,4 @@
+地区数据
+
+地区xml文件生成方法：
+java -jar iseaSpider.jar d:/folderA/
