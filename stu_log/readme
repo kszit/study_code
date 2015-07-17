@@ -1,0 +1,10 @@
+
+
+日志实现对应的配置文件：
+log4j-simple:无配置文件，默认不输出debug信息。系统属性指定：-Dorg.slf4j.simpleLogger.defaultLogLevel=DEBUG，来启用debug输出 
+log4j=》log4j.properties
+jdklog=>logging.properties   (需要指定：-Djava.util.logging.config.file=logging.properties)
+logback=>logback.xml
+
+
+

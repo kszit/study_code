@@ -1,4 +1,7 @@
-���ݴ��䣺
-1��http
-2��ftp
-3��shh2
+数据传输
+http
+ftp
+shh2
+
+
+camel:apache 的项目，实现多种协议的数据交互，主要用在多项目数据交互中。

@@ -11,7 +11,7 @@
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <File>xxxx.log</File>
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-      <FileNamePattern>xxxx.log.%i.bak</FileNamePattern>
+      <FileNamePattern>xxxx.log.%i.bak</FileNamePattern><!-- 日志文件存放在根目录下 -->
       <MinIndex>1</MinIndex>
       <MaxIndex>12</MaxIndex>
     </rollingPolicy>

@@ -65,6 +65,17 @@ import org.slf4j.LoggerFactory;
  * <li>logback</li>
  * 
  *
+ *
+ *
+ *
+ *
+ *<li>log4j simple</li>
+ *
+ * <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.5</version>
+    </dependency>
  */
 public class A
 {

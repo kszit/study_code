@@ -1,0 +1,12 @@
+
+数据格式转换：
+xml：sax和dom方式
+	dom4j:
+	jdk:
+	xml-apis.jar:  语法解析器
+	xercesimpl.jar:语法解析器
+
+
+json：
+
+
