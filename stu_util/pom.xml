@@ -29,6 +29,11 @@
 			<!-- <url>http://192.168.192.201:8081/nexus/content/groups/public/</url> -->
 			<url>http://clojars.org/repo</url>
 		</repository>
+   <repository>
+      <id>yoava</id>
+      <name>AOL yoava</name>
+      <url>http://yoava.artifactoryonline.com/yoava/repo</url>
+   </repository>
 	</repositories>
 
 	<dependencies>
@@ -70,5 +75,16 @@
 			<artifactId>dozer</artifactId>
 			<version>5.5.1</version>
 		</dependency>
+		
+		http://code.google.com/p/java-html2image/
+		
+		http://blog.csdn.net/love_5209/article/details/18957835
+		
+		http://www.doc100.net/bugs/t/157818/index.html
+		<dependency>
+   <groupId>gui.ava</groupId>
+   <artifactId>html2image</artifactId>
+   <version>0.9</version>
+</dependency>
 	</dependencies>
 </project>
