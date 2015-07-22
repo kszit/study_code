@@ -145,11 +145,15 @@ public class FindClassExtendsSubClass<T> {
 	    for (String pro : CLASS_PATH_PROP) {  
 	        String[] pathes = System.getProperty(pro).split(delim);  
 	        for (String path : pathes) {  
-	        	log.debug(pro+":查找到类路径或者jar包："+path);
+	        	log.debug("查找目标路径("+pro+"):"+path);
 //	        	System.out.println(pro+":查找到类路径或者jar包："+path);
 	        	classPathArray.add(new File(path));  
 	        }  
 	    }  
+	    String localClassPath = this.getClass().getClassLoader().getResource("").getFile();
+	    log.debug("查找目标路径(local.classpath):"+localClassPath);
+//    	
+	    classPathArray.add(new File(localClassPath));
 	}
 	
 

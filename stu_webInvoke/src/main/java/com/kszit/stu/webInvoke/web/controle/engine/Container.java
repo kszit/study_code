@@ -40,6 +40,12 @@ public class Container {
 		
 		FindClassExtendsSubClass<Controle> controleClassesHandler = new FindClassExtendsSubClass<Controle>("com.kszit.dareport",Controle.class);
 		List<Class<Controle>> controleClasses = controleClassesHandler.getClassSubCalss(true);
+		for(Class<Controle> c:controleClasses){
+//			log.debug("添加控制器类："+c.getName());
+			addControler(c);
+		}
+		
+	
 		
 //		Class<Controle> webContail = null;
 //		try {
@@ -52,10 +58,7 @@ public class Container {
 //		}
 		
 		
-		for(Class<Controle> c:controleClasses){
-			log.debug("添加控制器类："+c.getName());
-			addControler(c);
-		}
+
 		
 	}
 	
@@ -85,6 +88,16 @@ public class Container {
 			e.printStackTrace();
 		}
 		
+		
+	}
+	
+	
+	public static void main(String[] a){
+	
+		
+		System.out.println(System.getProperty("user.dir"));
+		
+		System.out.println(System.getProperty("java.class.path"));
 		
 	}
 	
