@@ -96,8 +96,10 @@ public class Context {
 	}
 	
 	public void out(String s){
-		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html");
+//		response.setCharacterEncoding("UTF-8");
+		
+		 response.setContentType("text/html;charset=utf-8");
 //		response.setContentLength(s.length());
 		try {
 			PrintWriter writer = response.getWriter();

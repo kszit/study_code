@@ -17,9 +17,10 @@ public abstract class ParentPage {
 	private int state;
 	
 	public String jsonOut(){
+		
 		String returnStr = "{\"state\":"+this.state+"," +
 					"\"msg\":\""+this.msg+"\"," +
-					"\"data\":"+((this.getJsonData().startsWith("{")||this.getJsonData().startsWith("["))?this.getJsonData():"\""+this.getJsonData()+"\"")+"}";
+					"\"data\":"+((this.getJsonData()!=null &&(this.getJsonData().startsWith("{")||this.getJsonData().startsWith("[")))?this.getJsonData():"\""+this.getJsonData()+"\"")+"}";
 		
 		return returnStr;
 	}

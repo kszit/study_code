@@ -65,8 +65,9 @@ class VelocityOut{
 	private VelocityOut(){
 		Properties p = new Properties();
 		// 设置输入输出编码类型。和这次说的解决的问题无关
-		p.setProperty(Velocity.INPUT_ENCODING, "UTF-8");
-		p.setProperty(Velocity.OUTPUT_ENCODING, "UTF-8");
+		p.setProperty(Velocity.INPUT_ENCODING, "utf-8");
+		p.setProperty(Velocity.OUTPUT_ENCODING, "utf-8");
+		
 		// 设置velocity资源加载方式为class
 		p.setProperty("resource.loader", "class");
 		// 设置velocity资源加载方式为file时的处理类
