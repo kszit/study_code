@@ -10,7 +10,7 @@
 		<relativePath>../stu_parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>stu_webInvoke</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>stu_webInvoke Maven Webapp</name>
 
 	<url>http://maven.apache.org</url>
@@ -25,6 +25,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -53,5 +54,34 @@
 	</dependencies>
 	<build>
 		<finalName>stu_webInvoke</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<path>/webinvoke</path>
+					<port>8086</port>
+					<uriEncoding>UTF-8</uriEncoding>
+					<url>http://localhost:8081/manager/html</url>
+					
+				</configuration>
+			</plugin>
+			
+			<plugin>
+               	<groupId>org.eclipse.jetty</groupId>
+    			<artifactId>jetty-maven-plugin</artifactId>
+    			<version>9.3.0.M2</version>
+                <configuration>
+                    <stopPort>9966</stopPort>
+                    <stopKey>foo</stopKey>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                    <webAppConfig>
+                        <contextPath>/dareport</contextPath>
+                    </webAppConfig>
+                </configuration>
+            </plugin>
+			
+		</plugins>
 	</build>
 </project>

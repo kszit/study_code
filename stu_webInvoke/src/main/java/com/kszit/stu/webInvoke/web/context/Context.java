@@ -69,6 +69,7 @@ public class Context {
 	public void init(HttpServletRequest req, HttpServletResponse resp){
 		this.request = req;
 		this.response = resp;
+		response.setContentType("text/html;charset=utf-8");
 	}
 	
 	public String action(){
@@ -96,10 +97,9 @@ public class Context {
 	}
 	
 	public void out(String s){
-//		response.setContentType("text/html");
-//		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("gbk");
 		
-		 response.setContentType("text/html;charset=utf-8");
 //		response.setContentLength(s.length());
 		try {
 			PrintWriter writer = response.getWriter();
@@ -140,6 +140,7 @@ public class Context {
 	public PrintWriter getWriter(){
 		PrintWriter writer = null;
 		try {
+			response.setContentType("text/html;charset=utf-8");
 			writer = response.getWriter();
 		} catch (IOException e) {
 			e.printStackTrace();
