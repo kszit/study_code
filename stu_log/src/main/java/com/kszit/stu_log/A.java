@@ -64,7 +64,12 @@ import org.slf4j.LoggerFactory;
  * 
  * <li>logback</li>
  * 
- *
+ *<dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.2</version>
+                <scope>runtime</scope>
+        </dependency>
  *
  *
  *
