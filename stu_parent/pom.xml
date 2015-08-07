@@ -25,6 +25,10 @@
 		
 		<module>../stu_dataTransfer</module>
 		<module>../stu_javaBase</module>
+		<module>../stu_webSafety</module>
+		<module>../stu_webBase</module>
+		<module>../stu_dbneo4j</module>
+		<module>../stu_dbneo4j_spring</module>
 	</modules>
 
 	<properties>
