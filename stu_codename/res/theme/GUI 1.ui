@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="GUI 1" cloudDestinationProperty="GUI 1" leadComponent="WebBrowser" title="&#x6587;&#x7ae0;&#x8be6;&#x7ec6;" >
+  <component type="WebBrowser" name="WebBrowser" cloudDestinationProperty="WebBrowser" >
+  </component>
+</component>

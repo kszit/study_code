@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="Main" cloudDestinationProperty="Main" uiid="" snapToGrid="false" flatten="false" layout="BoxLayout" boxLayoutAxis="Y" title="Hi World" >
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="&#x4e2d;&#x6587; " >
+  </component>
+  <component type="Button" name="Button" cloudDestinationProperty="Button" text="Button" >
+  </component>
+<command name="5" id="5" action="" backCommand="false" /><command name="4" id="4" action="" backCommand="false" /><command name="3" id="3" action="" backCommand="false" /><command name="2" id="2" action="" backCommand="false" /><command name="1" id="1" action="" backCommand="false" /></component>

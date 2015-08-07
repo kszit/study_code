@@ -98,7 +98,7 @@ public class Context {
 	
 	public void out(String s){
 		response.setContentType("text/html");
-		response.setCharacterEncoding("gbk");
+		response.setCharacterEncoding("utf-8");
 		
 //		response.setContentLength(s.length());
 		try {
