@@ -1,4 +1,4 @@
-package org.stu_dataTransfer.camel;
+package org.stu_dataTransfer.camel.file;
 
 import org.apache.camel.Main;
 import org.apache.camel.builder.RouteBuilder;
