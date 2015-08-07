@@ -1,0 +1,5 @@
+
+1、在filter中不能修改httprequest中的值，
+但可以通过request的装饰器类httpServletRequestWrapper达到目的。
+
+2、
