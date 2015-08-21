@@ -31,6 +31,7 @@
 		<module>../stu_dbneo4j_spring</module>
     	<module>../stu_solrj</module>
     	<module>../stu_dbredis</module>
+    	<module>../stu_dataValidator</module>
   </modules>
 
 	<properties>
