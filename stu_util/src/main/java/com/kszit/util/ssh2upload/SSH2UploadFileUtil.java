@@ -16,7 +16,7 @@ public class SSH2UploadFileUtil {
 			.getLogger(SSH2UploadFileUtil.class);
 
 	public SSH2UploadFileUtil(String apath,String aaddr,String aport,String ausername,String apwd){
-		this.scpAddress = apath;
+		this.scpPath = apath;
 		this.scpAddress = aaddr;
 		this.scpPort = aport;
 		this.username = ausername;
@@ -24,7 +24,7 @@ public class SSH2UploadFileUtil {
 	}
 	
 	// scp文件目录
-				String scpPath = "/usr/local/tomcat/webapps/datserver/upgradePackage/001";// "/data01/javadev/";//
+				String scpPath = "/usr/local/tomcat/webapps/datserver/upgradePackage/006";// "/data01/javadev/";//
 				// scp ip地址
 				String scpAddress = "172.31.201.169";// "192.168.100.220"; //
 				// scp 端口号

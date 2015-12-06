@@ -99,16 +99,14 @@ public class HTML2Picture {
             byte[] bytes = baos.toByteArray();
             baos.close();
 
-            FileUtil.writeBinFile("C:\123.jpg", bytes);
+          //  FileUtil.writeBinFile("C:\123.jpg", bytes);
             
             pageIndex++;
         }
     }
 
     public static void main(String[] args) throws Exception {
-        html2jpeg(Color.white, FileUtil.readAscFile("C:\table.html"),
-                DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_WIDTH, new EmptyBorder(0, 0,
-                        0, 0));
+       
         System.out.println("over!");
 
     }

@@ -21,7 +21,13 @@
 			<id>nexus</id>
 			<name>Team Nexus Repository</name>
 			<!-- <url>http://192.168.192.201:8081/nexus/content/groups/public/</url> -->
-			<url>http://127.0.0.1:8081/nexus/content/groups/public/</url>
+			<url>http://localhost:8081/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>clojars.org</id>
@@ -37,7 +43,20 @@
 		</repository>
 		 -->
 	</repositories>
-
+	
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Local Nexus Repository</name>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Local Nexus Repository</name>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
